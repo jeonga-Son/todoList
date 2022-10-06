@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var toDoString = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("What to do Today?")
+                .font(.title.bold())
+            HStack {
+                Image(systemName: "square.and.pencil")
+                TextField("your task", text: $toDoString)
+            }
+            .textFieldStyle(DefaultTextFieldStyle())
+            .frame(width: 300, height: 50, alignment: .center)
         }
-        .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
